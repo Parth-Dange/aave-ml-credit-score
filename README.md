@@ -2,35 +2,35 @@
 
 This project generates credit scores (0–1000) for each wallet based on its historical behavior on the Aave V2 protocol. We use machine learning (Random Forest Classifier) trained on engineered behavioral features with proxy labels derived from repayment and liquidation patterns.
 
----
-
 ## Project Structure
 
-aave-ml-credit-score/
-├── data/ # Contains user_transactions.json (not committed)
-│
-├── src/ # All source code
-│ ├── feature_engineering.py # Extract wallet features
-│ ├── label_generation.py # Generate proxy labels
-│ ├── train_model.py # Train ML model
-│ ├── predict_scores.py # Generate credit scores
-│ └── run_pipeline.py (optional) # End-to-end runner script
-│
-├── output/ # Generated results (not committed)
-│ ├── features.csv # Wallet features
-│ ├── labeled_features.csv # Proxy-labeled data
-│ ├── model.pkl # Trained model
-│ └── wallet_scores_ml.csv # Final wallet → credit scores
-│
-├── notebooks/ # Optional notebooks for EDA and charts
-│ └── eda_and_analysis.ipynb
-│
-├── README.md # Project instructions
-├── analysis.md # Credit score summary & behavioral insights
-├── requirements.txt # Python packages used
-└── .gitignore # Prevents committing data/output folders
+## 📁 Project Structure
 
----
+```plaintext
+aave-ml-credit-score/
+├── data/                      # Contains user_transactions.json (not committed)
+│
+├── src/                       # All source code
+│   ├── feature_engineering.py     # Extract wallet features
+│   ├── label_generation.py        # Generate proxy labels
+│   ├── train_model.py             # Train ML model
+│   ├── predict_scores.py          # Generate credit scores
+│   └── run_pipeline.py            # Optional wrapper script
+│
+├── output/                    # Generated results (ignored in git)
+│   ├── features.csv               # Engineered features
+│   ├── labeled_features.csv       # With proxy labels
+│   ├── model.pkl                  # Trained ML model
+│   └── wallet_scores_ml.csv       # Final credit scores
+│
+├── notebooks/                # Optional Jupyter notebooks
+│   └── eda_and_analysis.ipynb
+│
+├── README.md                 # Project setup and run instructions
+├── analysis.md               # Overview of results and wallet behaviors
+├── requirements.txt          # Python dependencies
+└── .gitignore                # Ignore data/output folders
+
 
 ## Setup Instructions
 
@@ -104,3 +104,4 @@ wallet,credit_score
 - No personally identifiable info is used. Wallets are scored purely on aggregated DeFi behavior.
 - Labels are generated using repayment ratios and liquidation signals.
 - The model is designed to be easily extensible for future datasets and protocols.
+```
