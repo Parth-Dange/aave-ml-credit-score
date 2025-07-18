@@ -30,7 +30,7 @@ aave-ml-credit-score/
 ├── analysis.md               # Overview of results and wallet behaviors
 ├── requirements.txt          # Python dependencies
 └── .gitignore                # Ignore data/output folders
-
+```
 
 ## Setup Instructions
 
@@ -104,4 +104,3 @@ wallet,credit_score
 - No personally identifiable info is used. Wallets are scored purely on aggregated DeFi behavior.
 - Labels are generated using repayment ratios and liquidation signals.
 - The model is designed to be easily extensible for future datasets and protocols.
-```
