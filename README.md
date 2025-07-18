@@ -7,18 +7,28 @@ This project generates credit scores (0–1000) for each wallet based on its his
 ## Project Structure
 
 aave-ml-credit-score/
-├── data/
-│ └── user_transactions.json
-├── src/
-│ ├── feature_engineering.py
-│ ├── label_generation.py
-│ ├── train_model.py
-│ └── predict_scores.py
-├── output/
-│ └── (various intermediate and result files, see below)
-├── requirements.txt
-├── README.md
-└── analysis.md
+├── data/ # Contains user_transactions.json (not committed)
+│
+├── src/ # All source code
+│ ├── feature_engineering.py # Extract wallet features
+│ ├── label_generation.py # Generate proxy labels
+│ ├── train_model.py # Train ML model
+│ ├── predict_scores.py # Generate credit scores
+│ └── run_pipeline.py (optional) # End-to-end runner script
+│
+├── output/ # Generated results (not committed)
+│ ├── features.csv # Wallet features
+│ ├── labeled_features.csv # Proxy-labeled data
+│ ├── model.pkl # Trained model
+│ └── wallet_scores_ml.csv # Final wallet → credit scores
+│
+├── notebooks/ # Optional notebooks for EDA and charts
+│ └── eda_and_analysis.ipynb
+│
+├── README.md # Project instructions
+├── analysis.md # Credit score summary & behavioral insights
+├── requirements.txt # Python packages used
+└── .gitignore # Prevents committing data/output folders
 
 ---
 
